@@ -1,16 +1,17 @@
 /*
-See the LICENSE.txt file for this sample’s licensing information.
-
-Abstract:
-A view showing featured landmarks above a list of landmarks grouped by category.
-*/
+ See the LICENSE.txt file for this sample’s licensing information.
+ 
+ Abstract:
+ A view showing featured landmarks above a list of landmarks grouped by category.
+ */
 
 import SwiftUI
 
 struct CategoryHome: View {
     @Environment(ModelData.self) var modelData
+    
     @State private var showingProfile = false
-
+    
     var body: some View {
         NavigationSplitView {
             List {
@@ -20,7 +21,7 @@ struct CategoryHome: View {
                     .frame(height: 200)
                     .clipped()
                     .listRowInsets(EdgeInsets())
-
+                
                 ForEach(modelData.categories.keys.sorted(), id: \.self) { key in
                     CategoryRow(categoryName: key, items: modelData.categories[key]!)
                 }
@@ -28,6 +29,7 @@ struct CategoryHome: View {
             }
             .listStyle(.inset)
             .navigationTitle("Featured")
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -35,8 +37,14 @@ struct CategoryHome: View {
                         ProfileHost()
                     }, label: {
                         Image(systemName: "person.crop.circle")
-                            .font(.system(size: 28, weight: .heavy))
-                            .foregroundStyle(Color.green)
+                            .font(.system(size: 24))
+                            .foregroundStyle(
+                                .linearGradient(
+                                    colors: [.pink, .blue],
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                            )
                     })
                 }
             }
@@ -44,7 +52,6 @@ struct CategoryHome: View {
             Text("Select a Landmark")
         }
     }
-    
 }
 
 #Preview {
