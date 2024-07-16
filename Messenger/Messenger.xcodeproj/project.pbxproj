@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172B2D6A2C6144CC00D37DDA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 172B2D692C6144CC00D37DDA /* Localizable.xcstrings */; };
 		176160CF2C611FE600F588EE /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 176160BB2C611FE600F588EE /* SF-Pro-Display-Black.otf */; };
 		176160D02C611FE600F588EE /* SF-Pro-Display-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 176160BC2C611FE600F588EE /* SF-Pro-Display-BlackItalic.otf */; };
 		176160D12C611FE600F588EE /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 176160BD2C611FE600F588EE /* SF-Pro-Display-Bold.otf */; };
@@ -68,6 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		172B2D692C6144CC00D37DDA /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		176160BB2C611FE600F588EE /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
 		176160BC2C611FE600F588EE /* SF-Pro-Display-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BlackItalic.otf"; sourceTree = "<group>"; };
 		176160BD2C611FE600F588EE /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		176160CE2C611FE600F588EE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				172B2D692C6144CC00D37DDA /* Localizable.xcstrings */,
 				17EDD73A2C60F83B0078AE25 /* Assets.xcassets */,
 				176160CD2C611FE600F588EE /* Fonts */,
 			);
@@ -416,6 +419,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"en-US",
+				"ru-RU",
 			);
 			mainGroup = 17EDD6F12C60F8080078AE25;
 			productRefGroup = 17EDD6FB2C60F8080078AE25 /* Products */;
@@ -437,6 +442,7 @@
 				17EDD7052C60F8090078AE25 /* Preview Assets.xcassets in Resources */,
 				176160DE2C611FE600F588EE /* SF-Pro-Display-ThinItalic.otf in Resources */,
 				176160DC2C611FE600F588EE /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
+				172B2D6A2C6144CC00D37DDA /* Localizable.xcstrings in Resources */,
 				176160E02C611FE600F588EE /* SF-Pro-Display-UltralightItalic.otf in Resources */,
 				176160D52C611FE600F588EE /* SF-Pro-Display-Light.otf in Resources */,
 				176160D62C611FE600F588EE /* SF-Pro-Display-LightItalic.otf in Resources */,

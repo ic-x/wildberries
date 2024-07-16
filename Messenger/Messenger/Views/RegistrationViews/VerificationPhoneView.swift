@@ -11,7 +11,7 @@ struct VerificationPhoneView: View {
     @Binding var navigationPath: NavigationPath
     @StateObject private var viewModel = VerificationPhoneViewModel()
     @State private var isAnimatingCircle = false
-    @State private var loadingText = "Loading"
+    @State private var loadingText: LocalizedStringKey = "loading"
     
     var body: some View {
         ZStack {
@@ -21,41 +21,43 @@ struct VerificationPhoneView: View {
             VStack {
                 switch viewModel.isAnimating {
                 case false:
-                    Text("Введите номер телефона")
+                    Text("enter_phone_number")
                         .font(.Typography.Heading.h2)
                         .multilineTextAlignment(.center)
                         .padding()
                         .foregroundStyle(.text)
                     
-                    Text("Мы вышлем код подтверждения на указанный номер")
+                    Text("confirmation_code_message")
                         .font(.Typography.Body.body2)
                         .lineSpacing(24)
                         .multilineTextAlignment(.center)
                         .padding(.bottom)
                         .foregroundStyle(.text)
                 default:
-                    VStack (alignment: .leading) {
-                        Circle()
-                            .stroke(LinearGradient(
-                                gradient: Gradient(colors: [.red, .orange, .yellow, .green, .blue, .purple]),
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            ), lineWidth: 10)
-                            .frame(width: 100, height: 100)
-                            .shadow(color: .purple, radius: 10)
-                            .rotationEffect(.degrees(isAnimatingCircle ? 360 : 0))
-                            .animation(Animation.linear(duration: 2).repeatForever(autoreverses: false), value: isAnimatingCircle)
-                            .onAppear {
-                                isAnimatingCircle = true
-                            }
-                            .padding(.bottom)
-                        
+                    Circle()
+                        .stroke(LinearGradient(
+                            gradient: Gradient(colors: [.red, .orange, .yellow, .green, .blue, .purple]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        ), lineWidth: 10)
+                        .frame(width: 100, height: 100)
+                        .shadow(color: .purple, radius: 10)
+                        .rotationEffect(.degrees(isAnimatingCircle ? 360 : 0))
+                        .animation(Animation.linear(duration: 2).repeatForever(autoreverses: false), value: isAnimatingCircle)
+                        .onAppear {
+                            isAnimatingCircle = true
+                        }
+                        .padding(.bottom)
+                    
+                    ZStack (alignment: .leading) {
+                        Text("loading_with_three_dots")
+                            .opacity(0)
                         Text(loadingText)
-                            .padding([.top, .leading])
                             .onAppear {
                                 startLoadingTextAnimation()
                             }
                     }
+                    .padding(.top)
                 }
                 
                 HStack {
@@ -110,7 +112,7 @@ struct VerificationPhoneView: View {
                     //                        let formattedPhoneNumber = "\(viewModel.selectedCountry.code) \(viewModel.phoneNumber)"
                     //                        navigationPath.append(NavigationItem.verificationCodeView(phoneNumber: formattedPhoneNumber))
                 }) {
-                    Text("Продолжить")
+                    Text("continue")
                         .font(.Typography.Subheading.sub2)
                         .lineSpacing(28)
                         .multilineTextAlignment(.center)
@@ -140,7 +142,12 @@ struct VerificationPhoneView: View {
     }
     
     private func startLoadingTextAnimation() {
-        let loadingStates = ["Loading", "Loading.", "Loading..", "Loading..."]
+        let loadingStates: [LocalizedStringKey] = [
+            "loading",
+            "loading_with_dot",
+            "loading_with_two_dots",
+            "loading_with_three_dots"
+        ]
         var index = 0
         
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
