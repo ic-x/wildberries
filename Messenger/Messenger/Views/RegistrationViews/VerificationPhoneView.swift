@@ -10,24 +10,53 @@ import SwiftUI
 struct VerificationPhoneView: View {
     @Binding var navigationPath: NavigationPath
     @StateObject private var viewModel = VerificationPhoneViewModel()
+    @State private var isAnimatingCircle = false
+    @State private var loadingText = "Loading"
     
     var body: some View {
         ZStack {
             Color.brandBackground
                 .ignoresSafeArea()
+            
             VStack {
-                Text("Введите номер телефона")
-                    .font(.Typography.Heading.h2)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                    .foregroundStyle(.text)
-                
-                Text("Мы вышлем код подтверждения на указанный номер")
-                    .font(.Typography.Body.body2)
-                    .lineSpacing(24)
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom)
-                    .foregroundStyle(.text)
+                switch viewModel.isAnimating {
+                case false:
+                    Text("Введите номер телефона")
+                        .font(.Typography.Heading.h2)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .foregroundStyle(.text)
+                    
+                    Text("Мы вышлем код подтверждения на указанный номер")
+                        .font(.Typography.Body.body2)
+                        .lineSpacing(24)
+                        .multilineTextAlignment(.center)
+                        .padding(.bottom)
+                        .foregroundStyle(.text)
+                default:
+                    VStack (alignment: .leading) {
+                        Circle()
+                            .stroke(LinearGradient(
+                                gradient: Gradient(colors: [.red, .orange, .yellow, .green, .blue, .purple]),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            ), lineWidth: 10)
+                            .frame(width: 100, height: 100)
+                            .shadow(color: .purple, radius: 10)
+                            .rotationEffect(.degrees(isAnimatingCircle ? 360 : 0))
+                            .animation(Animation.linear(duration: 2).repeatForever(autoreverses: false), value: isAnimatingCircle)
+                            .onAppear {
+                                isAnimatingCircle = true
+                            }
+                            .padding(.bottom)
+                        
+                        Text(loadingText)
+                            .padding([.top, .leading])
+                            .onAppear {
+                                startLoadingTextAnimation()
+                            }
+                    }
+                }
                 
                 HStack {
                     Button(action: {
@@ -74,8 +103,12 @@ struct VerificationPhoneView: View {
                 .padding(.bottom)
                 
                 Button(action: {
-                    let formattedPhoneNumber = "\(viewModel.selectedCountry.code) \(viewModel.phoneNumber)"
-                    navigationPath.append(NavigationItem.verificationCodeView(phoneNumber: formattedPhoneNumber))
+                    withAnimation {
+                        viewModel.isAnimating = true
+                    }
+                    // MARK: - Uncomment to navigate to VerificationCodeView
+                    //                        let formattedPhoneNumber = "\(viewModel.selectedCountry.code) \(viewModel.phoneNumber)"
+                    //                        navigationPath.append(NavigationItem.verificationCodeView(phoneNumber: formattedPhoneNumber))
                 }) {
                     Text("Продолжить")
                         .font(.Typography.Subheading.sub2)
@@ -84,10 +117,10 @@ struct VerificationPhoneView: View {
                         .padding()
                         .frame(maxWidth: .infinity)
                         .foregroundStyle(.buttonText)
-                        .background(viewModel.isPhoneNumberValid ? .button : .inactiveButton)
+                        .background(viewModel.isPhoneNumberValid && !viewModel.isAnimating ? .button : .inactiveButton)
                         .cornerRadius(30)
                 }
-                .disabled(!viewModel.isPhoneNumberValid)
+                .disabled(!(viewModel.isPhoneNumberValid && !viewModel.isAnimating))
                 .padding(.horizontal, 40)
                 .padding()
             }
@@ -103,6 +136,16 @@ struct VerificationPhoneView: View {
                 }
             }
             .navigationBarBackButtonHidden(true)
+        }
+    }
+    
+    private func startLoadingTextAnimation() {
+        let loadingStates = ["Loading", "Loading.", "Loading..", "Loading..."]
+        var index = 0
+        
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+            loadingText = loadingStates[index]
+            index = (index + 1) % loadingStates.count
         }
     }
 }

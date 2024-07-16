@@ -168,6 +168,7 @@
 		176160CE2C611FE600F588EE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				17EDD73A2C60F83B0078AE25 /* Assets.xcassets */,
 				176160CD2C611FE600F588EE /* Fonts */,
 			);
 			path = Resources;
@@ -201,7 +202,6 @@
 				17EDD7412C60F83B0078AE25 /* Helpers */,
 				17EDD73D2C60F83B0078AE25 /* Intents */,
 				176160CE2C611FE600F588EE /* Resources */,
-				17EDD73A2C60F83B0078AE25 /* Assets.xcassets */,
 				17EDD7032C60F8090078AE25 /* Preview Content */,
 			);
 			path = Messenger;
@@ -283,8 +283,8 @@
 		17EDD7392C60F83B0078AE25 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				17EDD72F2C60F83B0078AE25 /* MainViews */,
 				17EDD7382C60F83B0078AE25 /* RegistrationViews */,
+				17EDD72F2C60F83B0078AE25 /* MainViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -367,8 +367,8 @@
 		17EDD7542C60F83C0078AE25 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				17EDD74B2C60F83C0078AE25 /* MainViewModels */,
 				17EDD7532C60F83C0078AE25 /* RegistrationViewModels */,
+				17EDD74B2C60F83C0078AE25 /* MainViewModels */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";

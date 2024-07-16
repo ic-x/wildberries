@@ -12,6 +12,7 @@ class VerificationPhoneViewModel: ObservableObject {
     @Published var selectedCountry: Country
     @Published var isPickerPresented = false
     @Published var searchText = ""
+    @Published var isAnimating = false
     
     static let countries: [Country] = [
         Country(name: "США", code: "+1", flagImageName: "US"),
