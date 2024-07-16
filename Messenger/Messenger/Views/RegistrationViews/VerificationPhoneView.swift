@@ -34,30 +34,33 @@ struct VerificationPhoneView: View {
                         .padding(.bottom)
                         .foregroundStyle(.text)
                 default:
-                    Circle()
-                        .stroke(LinearGradient(
-                            gradient: Gradient(colors: [.red, .orange, .yellow, .green, .blue, .purple]),
-                            startPoint: .leading,
-                            endPoint: .trailing
-                        ), lineWidth: 10)
-                        .frame(width: 100, height: 100)
-                        .shadow(color: .purple, radius: 10)
-                        .rotationEffect(.degrees(isAnimatingCircle ? 360 : 0))
-                        .animation(Animation.linear(duration: 2).repeatForever(autoreverses: false), value: isAnimatingCircle)
-                        .onAppear {
-                            isAnimatingCircle = true
-                        }
-                        .padding(.bottom)
-                    
-                    ZStack (alignment: .leading) {
-                        Text("loading_with_three_dots")
-                            .opacity(0)
-                        Text(loadingText)
+                    VStack {
+                        Circle()
+                            .stroke(LinearGradient(
+                                gradient: Gradient(colors: [.red, .orange, .yellow, .green, .blue, .purple]),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            ), lineWidth: 10)
+                            .frame(width: 100, height: 100)
+                            .shadow(color: .purple, radius: 10)
+                            .rotationEffect(.degrees(isAnimatingCircle ? 360 : 0))
+                            .animation(Animation.linear(duration: 2).repeatForever(autoreverses: false), value: isAnimatingCircle)
                             .onAppear {
-                                startLoadingTextAnimation()
+                                isAnimatingCircle = true
                             }
+                            .padding(.bottom)
+                        
+                        ZStack (alignment: .leading) {
+                            Text("loading_with_three_dots")
+                                .opacity(0)
+                            Text(loadingText)
+                                .onAppear {
+                                    startLoadingTextAnimation()
+                                }
+                        }
+                        .padding(.top)
                     }
-                    .padding(.top)
+                    .transition(.scale)
                 }
                 
                 HStack {
