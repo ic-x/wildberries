@@ -1,0 +1,279 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    " и " : {
+
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
+    },
+    "000 000-00-00" : {
+
+    },
+    "Chats" : {
+
+    },
+    "confirmation_code_message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We will send a confirmation code to the provided number"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We will send a confirmation code to the provided number"
+          }
+        },
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мы вышлем код подтверждения на указанный номер"
+          }
+        }
+      }
+    },
+    "continue" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Продолжить"
+          }
+        }
+      }
+    },
+    "CURRENT CODE 1234" : {
+
+    },
+    "enter_phone_number" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter phone number"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter phone number"
+          }
+        },
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите номер телефона"
+          }
+        }
+      }
+    },
+    "loading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading"
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading"
+          }
+        },
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузка"
+          }
+        }
+      }
+    },
+    "loading_with_dot" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading."
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading."
+          }
+        },
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузка."
+          }
+        }
+      }
+    },
+    "loading_with_three_dots" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        },
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузка..."
+          }
+        }
+      }
+    },
+    "loading_with_two_dots" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading.."
+          }
+        },
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading.."
+          }
+        },
+        "ru-RU" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузка.."
+          }
+        }
+      }
+    },
+    "Navigation" : {
+
+    },
+    "OK" : {
+
+    },
+    "Open chats" : {
+
+    },
+    "Opens the chat tab in the app." : {
+
+    },
+    "Введите код" : {
+
+    },
+    "Выберите страну" : {
+
+    },
+    "Дополнительные опции" : {
+
+    },
+    "Закрыть" : {
+
+    },
+    "Запросить код повторно" : {
+
+    },
+    "Имя (обязательно)" : {
+
+    },
+    "Контакты" : {
+
+    },
+    "Нажимая кнопку «Начать общаться», я соглашаюсь с " : {
+
+    },
+    "Начать общаться" : {
+
+    },
+    "Неправильный код подтверждения" : {
+
+    },
+    "Общайтесь с друзьями и близкими легко" : {
+
+    },
+    "Онлайн" : {
+
+    },
+    "Отмена" : {
+
+    },
+    "Отправили код на номер %@" : {
+
+    },
+    "Ошибка" : {
+
+    },
+    "Повторный запрос через %lld сек" : {
+
+    },
+    "Поиск" : {
+
+    },
+    "Поиск страны" : {
+
+    },
+    "Политика конфиденциальности" : {
+
+    },
+    "политикой конфиденциальности" : {
+
+    },
+    "Профиль" : {
+
+    },
+    "Сохранить" : {
+
+    },
+    "Список чатов" : {
+
+    },
+    "Условия использования" : {
+
+    },
+    "условиями использования" : {
+
+    },
+    "Фамилия (опционально)" : {
+
+    }
+  },
+  "version" : "1.0"
+}
