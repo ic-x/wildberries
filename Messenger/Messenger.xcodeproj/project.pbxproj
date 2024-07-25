@@ -131,6 +131,7 @@
 		17EDD7512C60F83C0078AE25 /* VerificationPhoneViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationPhoneViewModel.swift; sourceTree = "<group>"; };
 		17EDD7522C60F83C0078AE25 /* WalkthroughViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewModel.swift; sourceTree = "<group>"; };
 		17EDD7552C60F83C0078AE25 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7A8D188A2C824FA9006BBC66 /* UISystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UISystem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +183,7 @@
 		17EDD6F12C60F8080078AE25 = {
 			isa = PBXGroup;
 			children = (
+				7A8D18892C824F61006BBC66 /* Modules */,
 				17EDD6FC2C60F8080078AE25 /* Messenger */,
 				17EDD6FB2C60F8080078AE25 /* Products */,
 			);
@@ -312,18 +314,10 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		17EDD7402C60F83B0078AE25 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modifiers;
-			sourceTree = "<group>";
-		};
 		17EDD7412C60F83B0078AE25 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				17EDD73F2C60F83B0078AE25 /* Extensions */,
-				17EDD7402C60F83B0078AE25 /* Modifiers */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -377,6 +371,14 @@
 				17EDD74B2C60F83C0078AE25 /* MainViewModels */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7A8D18892C824F61006BBC66 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7A8D188A2C824FA9006BBC66 /* UISystem */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
